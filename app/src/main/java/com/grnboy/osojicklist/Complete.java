@@ -1,24 +1,30 @@
-package com.grnboy.osojicecklist;
+package com.grnboy.osojicklist;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
-public class Guide0001 extends ActionBarActivity {
+public class Complete extends ActionBarActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guide0001);
+        setContentView(R.layout.activity_complete);
+
+        Button btn = (Button)findViewById(R.id.button7);
+        btn.setOnClickListener(this);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_guide0001, menu);
+        getMenuInflater().inflate(R.menu.menu_complete, menu);
         return true;
     }
 
@@ -35,5 +41,10 @@ public class Guide0001 extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick(View v) {
+        Intent intent = new Intent(this, Top.class);
+        startActivity(intent);
     }
 }

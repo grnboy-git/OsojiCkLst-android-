@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.grnboy.osojicecklist" >
+    package="com.grnboy.osojicklist" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Top"
+            android:name="com.grnboy.osojicklist.Top"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,15 +17,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PlaceList"
+            android:name="com.grnboy.osojicklist.PlaceList"
             android:label="@string/title_activity_place_list" >
         </activity>
         <activity
-            android:name=".Guide0001"
+            android:name="com.grnboy.osojicklist.Guide0001"
             android:label="@string/title_activity_guide0001" >
         </activity>
         <activity
-            android:name=".Complete"
+            android:name="com.grnboy.osojicklist.Complete"
             android:label="@string/title_activity_complete" >
         </activity>
     </application>
