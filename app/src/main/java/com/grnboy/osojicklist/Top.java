@@ -48,4 +48,5 @@ public class Top extends ActionBarActivity implements View.OnClickListener {
         Intent intent = new Intent(this, PlaceList.class);
         startActivity(intent);
     }
+
 }

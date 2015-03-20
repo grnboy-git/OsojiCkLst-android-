@@ -8,17 +8,33 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import net.nend.android.NendAdInterstitial;
+
 
 public class Complete extends ActionBarActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        NendAdInterstitial.loadAd(getApplicationContext(), "8c278673ac6f676dae60a1f56d16dad122e23516", 213206);
+        NendAdInterstitial.showAd(this);
         setContentView(R.layout.activity_complete);
 
         Button btn = (Button)findViewById(R.id.button7);
         btn.setOnClickListener(this);
+
+
+
+
     }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+
 
 
     @Override
@@ -45,6 +61,8 @@ public class Complete extends ActionBarActivity implements View.OnClickListener 
 
     public void onClick(View v) {
         Intent intent = new Intent(this, Top.class);
+        NendAdInterstitial.showAd(this,213206);
         startActivity(intent);
     }
+
 }

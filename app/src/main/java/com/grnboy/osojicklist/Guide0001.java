@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import net.nend.android.NendAdInterstitial;
+
 
 public class Guide0001 extends ActionBarActivity implements View.OnClickListener {
 
@@ -18,6 +20,8 @@ public class Guide0001 extends ActionBarActivity implements View.OnClickListener
 
         Button btn = (Button)findViewById(R.id.button);
         btn.setOnClickListener(this);
+
+        NendAdInterstitial.loadAd(getApplicationContext(), "8c278673ac6f676dae60a1f56d16dad122e23516", 213206);
     }
 
 

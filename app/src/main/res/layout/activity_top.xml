@@ -17,4 +17,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="153dp" />
 
+    <com.amoad.AMoAdView
+        android:id = "@+id/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#000"
+        xmlns:amoad="http://schemas.amoad.com/apk/res/android"
+        amoad:click_transition="jump"
+        amoad:rotate_transition="rotate"
+        amoad:sid="62056d310111552cbf6dd4e70df3e70bafaf0e480a77330f1e3d5a4ae202c690" />
+
 </RelativeLayout>
