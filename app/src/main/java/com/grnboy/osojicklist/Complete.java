@@ -17,14 +17,16 @@ public class Complete extends ActionBarActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         NendAdInterstitial.loadAd(getApplicationContext(), "8c278673ac6f676dae60a1f56d16dad122e23516", 213206);
-        NendAdInterstitial.showAd(this);
         setContentView(R.layout.activity_complete);
 
         Button btn = (Button)findViewById(R.id.button7);
         btn.setOnClickListener(this);
+    }
 
-
-
+    @Override
+    public void onWindowFocusChanged(boolean husFocus) {
+        super.onWindowFocusChanged(husFocus);
+        NendAdInterstitial.showAd(this,213206);
 
     }
 
@@ -60,9 +62,28 @@ public class Complete extends ActionBarActivity implements View.OnClickListener 
     }
 
     public void onClick(View v) {
-        Intent intent = new Intent(this, Top.class);
-        NendAdInterstitial.showAd(this,213206);
-        startActivity(intent);
+
+        NendAdInterstitial.showAd(this, new NendAdInterstitial.OnClickListener() {
+            final Intent intent = new Intent(Complete.this, Top.class);
+            @Override
+            public void onClick(NendAdInterstitial.NendAdInterstitialClickType clickType) {
+                switch(clickType) {
+                    case CLOSE:
+                        startActivity(intent);
+                        break;
+                    case DOWNLOAD:
+                        startActivity(intent);
+                        break;
+                    default:
+                        startActivity(intent);
+                        break;
+                }
+            }
+
+        });
+//        startActivity(intent);
     }
+
+
 
 }
